@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "dotenv/load"
+require "secops"
+require "irb"
+
+Secops::AwsSecretsManager.new do |config|
+  config.aws_region = ENV.fetch("AWS_REGION")
+end.handle_aws_secrets(secrets_configuration: [
+  {
+    name: ENV.fetch("AWS_SECRETS_NAME_1"),
+    type: ENV.fetch("AWS_SECRETS_TYPE_1")
+  },
+  {
+    name: ENV.fetch("AWS_SECRETS_NAME_2"),
+    type: ENV.fetch("AWS_SECRETS_TYPE_2")
+  }]
+)
+
+def reload!(print: true)
+  puts "Reloading ..." if print
+  root_dir = File.expand_path("..", __dir__)
+  reload_dirs = ["lib", "specs"]
+  reload_dirs.each do |dir|
+    Dir.glob("#{root_dir}/#{dir}/**/*.rb").each { |f| load(f) }
+  end
+  true
+end
+
+IRB.start(__FILE__)
