@@ -9,7 +9,7 @@ require "dry-validation"
 loader = Zeitwerk::Loader.for_gem
 loader.setup
 
-module Secops
+module AwsSecretsManager
   class Error < StandardError; end
 
   class Validator < Dry::Validation::Contract
@@ -23,14 +23,14 @@ module Secops
     end
   end
 
-  class AwsSecretsManager
+  class Configuration
     attr_accessor :aws_region
 
     def initialize
       yield self if block_given?
     end
 
-    def handle_aws_secrets(secrets_configuration)
+    def perform_secrets_initialization(secrets_configuration)
       v = Validator.new.call(secrets_configuration)
 
       raise Error.new(v.errors.to_h) if v.errors.any?

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "lib/secops/version"
+require_relative "lib/aws_secrets_manager/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "secops"
-  spec.version = Secops::VERSION
+  spec.name = "aws-secrets-manager"
+  spec.version = AwsSecretsManager::VERSION
   spec.authors = ["Aleksandar Popovic"]
   spec.email = ["aleksandar.popovic@linux.com"]
 
   spec.summary = "TODO: Write a short summary, because RubyGems requires one."
   spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "https://github.com/alekpopovic/secops"
+  spec.homepage = "https://github.com/alekpopovic/aws-secrets-manager"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 

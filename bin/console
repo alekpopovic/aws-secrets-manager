@@ -4,12 +4,12 @@
 
 require "bundler/setup"
 require "dotenv/load"
-require "secops"
+require "aws_secrets_manager"
 require "irb"
 
-Secops::AwsSecretsManager.new do |config|
+AwsSecretsManager::Configuration.new do |config|
   config.aws_region = ENV.fetch("AWS_REGION")
-end.handle_aws_secrets(secrets_configuration: [
+end.perform_secrets_initialization(secrets_configuration: [
   {
     name: ENV.fetch("AWS_SECRETS_NAME_1"),
     type: ENV.fetch("AWS_SECRETS_TYPE_1")
