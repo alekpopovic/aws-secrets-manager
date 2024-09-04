@@ -3,7 +3,7 @@
 require_relative "lib/aws_secrets_manager/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "aws_secrets_manager"
+  spec.name = "aws-secrets-manager"
   spec.version = AwsSecretsManager::VERSION
   spec.authors = ["Aleksandar Popovic"]
   spec.email = ["aleksandar.popovic@linux.com"]
