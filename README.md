@@ -2,6 +2,8 @@
 
 [![Ruby](https://github.com/alekpopovic/aws-secrets-manager/actions/workflows/main.yml/badge.svg)](https://github.com/alekpopovic/aws-secrets-manager/actions/workflows/main.yml)
 
+[![Ruby Gem](https://github.com/alekpopovic/aws-secrets-manager/actions/workflows/gem-push.yml/badge.svg)](https://github.com/alekpopovic/aws-secrets-manager/actions/workflows/gem-push.yml)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
