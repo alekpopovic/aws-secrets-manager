@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "secops"
+require "aws_secrets_manager"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

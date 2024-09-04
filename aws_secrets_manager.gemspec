@@ -3,20 +3,20 @@
 require_relative "lib/aws_secrets_manager/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "aws-secrets-manager"
+  spec.name = "aws_secrets_manager"
   spec.version = AwsSecretsManager::VERSION
   spec.authors = ["Aleksandar Popovic"]
   spec.email = ["aleksandar.popovic@linux.com"]
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
+  spec.summary = "Aws Secrets Manager gem for Rails and all Rack apps"
+  spec.description = "Support multiple plaintext and key-value aws secrets"
   spec.homepage = "https://github.com/alekpopovic/aws-secrets-manager"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/alekpopovic/secops"
-  spec.metadata["changelog_uri"] = "https://github.com/alekpopovic/secops"
+  spec.metadata["source_code_uri"] = "https://github.com/alekpopovic/aws-secrets-manager"
+  spec.metadata["changelog_uri"] = "https://github.com/alekpopovic/aws-secrets-manager/blob/main/CHANGELOG.md"
 
   gemspec = File.basename(__FILE__)
 
