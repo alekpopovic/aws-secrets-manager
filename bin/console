@@ -7,9 +7,11 @@ require "dotenv/load"
 require "aws_secrets_manager"
 require "irb"
 
-AwsSecretsManager::Configuration.new do |config|
+AwsSecretsManager.configure do |config|
   config.aws_region = ENV.fetch("AWS_REGION")
-end.perform_secrets_initialization(secrets_configuration: [
+end
+
+AwsSecretsManager.get_secret_value(secrets: [
   {
     name: ENV.fetch("AWS_SECRETS_NAME_1"),
     type: ENV.fetch("AWS_SECRETS_TYPE_1")
