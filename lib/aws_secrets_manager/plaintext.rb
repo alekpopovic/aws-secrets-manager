@@ -11,8 +11,8 @@ module AwsSecretsManager
 
       custom = JSON.generate(
         {
-          "#{response.name}": "#{response.secret_string}"
-        }
+          "#{response.name}": response.secret_string,
+        },
       )
 
       JSON.parse(custom).each_pair do |k, v|

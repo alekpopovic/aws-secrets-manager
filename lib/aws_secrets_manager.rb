@@ -6,7 +6,7 @@ require "aws-sdk-secretsmanager"
 require "active_support/inflector"
 require "dry-validation"
 
-loader = Zeitwerk::Loader.for_gem
+loader = Zeitwerk::Loader.for_gem(warn_on_extra_files: false)
 loader.setup
 
 module AwsSecretsManager

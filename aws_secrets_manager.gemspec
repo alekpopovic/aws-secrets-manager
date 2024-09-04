@@ -20,17 +20,17 @@ Gem::Specification.new do |spec|
 
   gemspec = File.basename(__FILE__)
 
-  spec.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
+  spec.files = IO.popen(["git", "ls-files", "-z"], chdir: __dir__, err: IO::NULL) do |ls|
     ls.readlines("\x0", chomp: true).reject do |f|
       (f == gemspec) ||
-        f.start_with?(*%w[bin/ test/ spec/ features/ .git .github appveyor Gemfile])
+        f.start_with?("bin/", "test/", "spec/", "features/", ".git", ".github", ".vscode", "appveyor", "Gemfile")
     end
   end
 
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "zeitwerk"
-  spec.add_dependency "aws-sdk-secretsmanager"
-  spec.add_dependency "activesupport"
-  spec.add_dependency "dry-validation"
+  spec.add_dependency("activesupport")
+  spec.add_dependency("aws-sdk-secretsmanager")
+  spec.add_dependency("dry-validation")
+  spec.add_dependency("zeitwerk")
 end
