@@ -22,14 +22,4 @@ AwsSecretsManager.get_secret_value(secrets: [
   }]
 )
 
-def reload!(print: true)
-  puts "Reloading ..." if print
-  root_dir = File.expand_path("..", __dir__)
-  reload_dirs = ["lib", "specs"]
-  reload_dirs.each do |dir|
-    Dir.glob("#{root_dir}/#{dir}/**/*.rb").each { |f| load(f) }
-  end
-  true
-end
-
 IRB.start(__FILE__)

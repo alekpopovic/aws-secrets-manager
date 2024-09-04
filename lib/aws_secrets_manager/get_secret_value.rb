@@ -6,16 +6,16 @@ module AwsSecretsManager
     def get_secret_value(secrets)
       validator = Validator::Validate.new.call(secrets)
 
-      raise AwsSecretsManager::Error.new(validator.errors.to_h) if validator.errors.any?
+      raise Errors.validation_error(validator.errors.to_h) if validator.errors.any?
 
       secrets[:secrets].each do |secret|
         case secret[:type]
-        when AwsSecretsManager::Config::PLAINTEXT
+        when Config::PLAINTEXT
           then plaintext(name: secret[:name])
-        when AwsSecretsManager::Config::KEY_VALUE
+        when Config::KEY_VALUE
           then key_value(name: secret[:name])
         else
-          raise AwsSecretsManager::Error.new("Only plaintext && key_value secrets types is allowed!!!")
+          raise Errors.secret_type_error
         end
       end
     end

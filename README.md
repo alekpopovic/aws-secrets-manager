@@ -12,7 +12,26 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+If you using Ruby on Rails then rails g aws-secrets-manager
+
+or manualy in Rack app config add:
+
+```ruby
+AwsSecretsManager.configure do |config|
+  config.aws_region = "AWS_REGION"
+end
+
+AwsSecretsManager.get_secret_value(secrets: [
+  {
+    name: "secret_name",
+    type: "plaintext"
+  },
+  {
+    name: "secret_name",
+    type: "key_value"
+  }]
+)
+```
 
 ## Development
 

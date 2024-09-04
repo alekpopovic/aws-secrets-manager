@@ -11,7 +11,7 @@ module AwsSecretsManager
         ENV[k.to_s.underscore.upcase] = v
       end
     rescue Aws::SecretsManager::Errors::ResourceNotFoundException
-      raise AwsSecretsManager::Error.new("AWS Secrets Manager Secret #{args[:name]} not exists!!!")
+      raise Errors.secret_not_exists_error(args[:name])
     end
   end
 end
