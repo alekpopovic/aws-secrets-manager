@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AwsSecretsManager
   module Validator
     class Validate < Dry::Validation::Contract

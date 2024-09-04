@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AwsSecretsManager
   module Plaintext
     private
@@ -7,7 +9,11 @@ module AwsSecretsManager
 
       response = client.get_secret_value(secret_id: args[:name])
 
-      custom = JSON.generate({"#{response.name}": "#{response.secret_string}"})
+      custom = JSON.generate(
+        {
+          "#{response.name}": "#{response.secret_string}"
+        }
+      )
 
       JSON.parse(custom).each_pair do |k, v|
         ENV[k.to_s.underscore.upcase] = v
