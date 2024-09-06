@@ -13,10 +13,6 @@ module AwsSecretsManager
         Error.new("Only #{Config::PLAINTEXT} && #{Config::KEY_VALUE} secrets types is allowed!!!")
       end
 
-      def aws_region_error
-        Error.new("Please provide aws_region value in configuration object")
-      end
-
       def secret_not_exists_error(secret_name)
         Error.new("AWS Secrets Manager Secret #{secret_name} not exists!!!")
       end
