@@ -11,6 +11,8 @@ if Gem.loaded_specs.key?("rails")
           create_file("config/initializers/aws_secrets_manager.rb", <<-FILE)
 # frozen_string_literal: true
 
+require 'aws_secrets_manager'
+
 AwsSecretsManager.configure do |config|
   config.aws_region = "AWS_REGION"
 end
