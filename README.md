@@ -126,6 +126,7 @@ Console output:
   "SMTP_HOST"=>"mailcluster.example.com",
   "FAKE_SSH_KEY"=>"-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCxxx7OfuLEm3wm\njOVKL4+ibYBrrL3p8id2x4DZ3C+7C8ZkwsC6\n"
 }
+```
 
 ## Development
 
