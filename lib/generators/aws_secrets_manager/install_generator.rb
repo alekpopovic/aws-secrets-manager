@@ -14,18 +14,28 @@ if Gem.loaded_specs.key?("rails")
 require 'aws_secrets_manager'
 
 AwsSecretsManager.configure do |config|
-  config.aws_region = "AWS_REGION"
+  config.aws_region = ENV.fetch("AWS_REGION", 'eu-west-1')
 end
 
-AwsSecretsManager.get_secret_value(secrets: [
-  {
-    name: "secret_name",
-    type: "plaintext"
-  },
-  {
-    name: "secret_name",
-    type: "key_value"
-  }]
+AwsSecretsManager.get_secret_value(
+  secrets: [
+    {
+      name: ENV.fetch('AWS_SECRETS_PLAINTEXT_1', 'aws-secrets-plaintext-1-development'),
+      type: AwsSecretsManager::Config::PLAINTEXT
+    },
+    {
+      name: ENV.fetch('AWS_SECRETS_PLAINTEXT_2', 'aws-secrets-plaintext-2-development'),
+      type: AwsSecretsManager::Config::PLAINTEXT
+    },
+    {
+      name: ENV.fetch('AWS_SECRETS_KEY_VALUE_1', 'aws-secrets-key-value-1-development'),
+      type: AwsSecretsManager::Config::KEY_VALUE
+    },
+    {
+      name: ENV.fetch('AWS_SECRETS_KEY_VALUE_2', 'aws-secrets-key-value-2-development'),
+      type: AwsSecretsManager::Config::KEY_VALUE
+    },
+  ]
 )
           FILE
         end
