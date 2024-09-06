@@ -16,7 +16,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-If you using Ruby on Rails then 
+If you using Ruby on Rails then
 
 ```ruby
 rails g aws_secrets_manager:install

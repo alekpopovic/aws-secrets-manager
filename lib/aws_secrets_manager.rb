@@ -13,6 +13,4 @@ module AwsSecretsManager
   include Config
   extend Client
   extend GetSecretValue
-
-  class Error < StandardError; end
 end
