@@ -55,7 +55,7 @@ AwsSecretsManager.get_secret_value(
 )
 ```
 
-In complex environments where applications require the use of multiple secrets, this game can be an interesting solution.
+In complex environments where applications require the use of multiple secrets, this gem can be an interesting solution.
 
 In AWS Secrets Manager if you have secret with name example-1 and with Secret value type => Key/value:
 
