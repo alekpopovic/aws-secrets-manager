@@ -16,7 +16,11 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-If you using Ruby on Rails then rails g aws-secrets-manager:install
+If you using Ruby on Rails then 
+
+```ruby
+rails g aws_secrets_manager:install
+```
 
 or manualy add in Rack app config file:
 
